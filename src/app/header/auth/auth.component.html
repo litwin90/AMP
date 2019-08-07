@@ -1,3 +1,14 @@
-<p>
-  auth works!
-</p>
+<div class="auth">
+    <div *ngIf="isLoggedIn" class="user-login">
+        <i class="fas fa-user"></i>
+        {{ userLogin }}
+    </div>
+    <button
+        class="login-logoff"
+        (click)="onAuthClick()"
+    >
+        <i *ngIf="isLoggedIn" class="fas fa-sign-out-alt"></i>
+        <i *ngIf="!isLoggedIn" class="fas fa-sign-in-alt"></i>
+        {{ isLoggedIn ? 'Log off' : 'Log in'}}
+    </button>
+</div>
