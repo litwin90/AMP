@@ -1,3 +1,12 @@
-<p>
-  search-input works!
-</p>
+
+<div class="input-with-icon">
+    <i class="fa fa-search" aria-hidden="true" #icon></i>
+    <input
+        class="input"
+        type="text"
+        autofocus
+        (focus)="onFocus()"
+        (blur)="onBlur()"
+        #inputField
+    >
+</div>

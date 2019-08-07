@@ -1,1 +1,33 @@
 @import '../../theme/core-variables.scss';
+
+.input-with-icon {
+    position: relative;
+}
+
+.input {
+    @include basePaddings;
+
+    width: px-to-rem(250px);
+    height: px-to-rem(30px);
+    border: px-to-rem(1px) solid $light-grey;
+    border-radius: px-to-rem(3px);
+    padding-left: px-to-rem(28px);
+    outline: none;
+    color: $light-grey;
+
+    &.focused {
+        padding-left: px-to-rem(16px);
+        color: $grey;
+    }
+}
+
+.fa-search {
+    position: absolute;
+    top: px-to-rem(7px);
+    left: px-to-rem(8px);
+    color: $light-grey;
+
+    &.focused {
+        display: none;
+    }
+}

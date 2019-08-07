@@ -1,15 +1,12 @@
 @import '../../theme/core-variables.scss';
 
-.breadcrumbs {
-    background-color: $white;
-
+.course-control {
     .wrapper {
         @include container;
 
         height: px-to-rem(50px);
         justify-content: flex-start;
         align-items: center;
-        color: $black;
 
         .copyright {
             @include baseFont;
