@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 
 @Component({
-  selector: 'app-header',
-  templateUrl: './header.component.html',
-  styleUrls: ['./header.component.scss']
+    selector: 'app-header',
+    templateUrl: './header.component.html',
+    styleUrls: ['./header.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderComponent implements OnInit {
+    isLoggedIn = false;
+    userLogin = 'Denis';
 
-  constructor() { }
+    constructor() {}
 
-  ngOnInit() {
-  }
+    ngOnInit() {}
 
+    onLogin() {
+        this.isLoggedIn = true;
+    }
+
+    onLogout() {
+        this.isLoggedIn = false;
+    }
 }
