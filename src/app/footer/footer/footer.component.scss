@@ -1,1 +1,18 @@
 @import '../../theme/core-variables.scss';
+
+.footer {
+    background-color: $dark;
+
+    .wrapper {
+        @include container;
+
+        height: px-to-rem(50px);
+        justify-content: flex-end;
+        align-items: center;
+        color: $grey;
+
+        .copyright {
+            @include baseFont;
+        }
+    }
+}
