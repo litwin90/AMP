@@ -1,1 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+button {
+    border: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    overflow: visible;
+    background-color: transparent;
+
+    /* inherit font & color from ancestor */
+    color: inherit;
+    font: inherit;
+
+    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+    line-height: normal;
+
+    /* Corrects font smoothing for webkit */
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+
+    /* Corrects inability to style clickable `input` types in iOS */
+    -webkit-appearance: none;
+}
+
+app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+app-main {
+    flex: 1;
+}
+
+.wrapper {
+    display: flex;
+    max-width: 1200px;
+    margin: auto;
+}
