@@ -13,12 +13,16 @@ export class SearchInputComponent implements OnInit, AfterViewInit {
 
     @HostListener('keydown', ['$event'])
     onKeyDown(keyboardEvent: KeyboardEvent) {
-        const isEscapePressed = keyboardEvent.code === KeyCodes.Escape;
-        if (!isEscapePressed) {
-            return;
+        switch (keyboardEvent.code) {
+            case KeyCodes.Escape:
+                this.clearInput();
+                break;
+            case KeyCodes.Enter:
+                this.onSubmit();
+                break;
+            default:
+                break;
         }
-
-        this.input.nativeElement.blur();
     }
     ngOnInit() {}
 
@@ -27,14 +31,34 @@ export class SearchInputComponent implements OnInit, AfterViewInit {
     }
 
     onBlur() {
-        this.renderer.setProperty(this.input.nativeElement, 'value', 'Text to search');
-        this.renderer.removeClass(this.input.nativeElement, 'focused');
-        this.renderer.removeClass(this.icon.nativeElement, 'focused');
+        this.setInputValue('Text to search');
+        this.markInputUsBlurred();
     }
 
     onFocus() {
-        this.renderer.setProperty(this.input.nativeElement, 'value', '');
+        this.clearInput();
+        this.markInputAsFocused();
+    }
+
+    onSubmit() {
+        this.input.nativeElement.blur();
+    }
+
+    private clearInput() {
+        this.setInputValue('');
+    }
+
+    private setInputValue(value: string) {
+        this.renderer.setProperty(this.input.nativeElement, 'value', value);
+    }
+
+    private markInputAsFocused() {
         this.renderer.addClass(this.input.nativeElement, 'focused');
         this.renderer.addClass(this.icon.nativeElement, 'focused');
+    }
+
+    private markInputUsBlurred() {
+        this.renderer.removeClass(this.input.nativeElement, 'focused');
+        this.renderer.removeClass(this.icon.nativeElement, 'focused');
     }
 }

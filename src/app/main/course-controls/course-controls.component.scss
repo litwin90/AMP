@@ -1,15 +1,28 @@
 @import '../../theme/core-variables.scss';
 
 .course-control {
+    padding-top: px-to-rem(20px);
+    padding-bottom: px-to-rem(20px);
+
     .wrapper {
         @include container;
 
         height: px-to-rem(50px);
         justify-content: flex-start;
         align-items: center;
+        flex-wrap: wrap;
 
-        .copyright {
-            @include baseFont;
+        .search {
+            @include button;
+
+            margin-left: px-to-rem(20px);
+            border-radius: px-to-rem(3px);
+            background-color: $yellow-green;
+            color: $white;
+
+            &:hover {
+                background-color: $yellow-green-hover;
+            }
         }
     }
 }
