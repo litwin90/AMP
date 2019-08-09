@@ -1,6 +1,9 @@
 <div class="course-list">
     <div class="wrapper">
-        <button class="add-course">Add course</button>
+        <button class="add-course">
+            <i class="fas fa-plus"></i>
+            Add course
+        </button>
         <app-course
             *ngFor="let course of courses"
             [course]="course"

@@ -6,6 +6,9 @@ import { CourseControlsComponent } from './course-controls/course-controls.compo
 import { AppCommonModule } from '../common/common.module';
 import { CoursesListComponent } from './courses-list/courses-list.component';
 import { CourseItemComponent } from './course-item/course-item.component';
+import { CoursePageComponent } from './course-page/course-page.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
     declarations: [
@@ -14,8 +17,10 @@ import { CourseItemComponent } from './course-item/course-item.component';
         CourseControlsComponent,
         CoursesListComponent,
         CourseItemComponent,
+        CoursePageComponent,
+        NotFoundComponent,
     ],
-    imports: [CommonModule, AppCommonModule],
+    imports: [CommonModule, AppCommonModule, AppRoutingModule],
     exports: [MainComponent],
 })
 export class MainModule {}

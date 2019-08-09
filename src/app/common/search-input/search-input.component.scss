@@ -7,8 +7,8 @@
 .input {
     @include basePaddings;
 
-    width: px-to-rem(250px);
     height: px-to-rem(30px);
+    width: 100%;
     border: px-to-rem(1px) solid $light-grey;
     border-radius: px-to-rem(3px);
     padding-left: px-to-rem(28px);

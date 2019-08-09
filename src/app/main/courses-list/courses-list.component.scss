@@ -23,6 +23,10 @@
             &:hover {
                 background-color: $medium-turquoise-hovered;
             }
+
+            .fa-plus {
+                margin-right: px-to-rem(10px);
+            }
         }
     }
 }

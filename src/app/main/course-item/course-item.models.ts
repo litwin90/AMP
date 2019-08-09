@@ -23,7 +23,7 @@ export class Course implements ICourse {
 }
 
 export const fakeCourse: ICourse = new Course(
-    'some id',
+    'some_id',
     'Course Title',
     1565281095187,
     120,

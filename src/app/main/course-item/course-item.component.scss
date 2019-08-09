@@ -16,7 +16,7 @@
         flex: 10 1 px-to-rem(100px);
         flex-direction: column;
         min-width: 280px;
-        cursor: pointer;
+        // cursor: pointer;
 
         .first-line {
             @include basePaddings;
