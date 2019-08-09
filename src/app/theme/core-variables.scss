@@ -15,6 +15,10 @@ $base-font-size: 16px;
     padding: px-to-rem(8px) px-to-rem(16px);
 }
 
+@mixin paddingsMin {
+    padding: px-to-rem(5px) px-to-rem(12px);
+}
+
 @mixin container {
     @include basePaddings();
 }
@@ -27,12 +31,20 @@ $base-font-size: 16px;
     @include baseFont();
     @include basePaddings();
 
+    border-radius: px-to-rem(3px);
     cursor: pointer;
     outline: none;
 }
 
+@mixin baseShadow {
+    -webkit-box-shadow: px-to-rem(-2px) px-to-rem(2px) px-to-rem(9px) px-to-rem(4px) rgba(156, 144, 156, .44);
+    -moz-box-shadow: px-to-rem(-2px) px-to-rem(2px) px-to-rem(9px) px-to-rem(4px) rgba(156, 144, 156, .44);
+    box-shadow: px-to-rem(-2px) px-to-rem(2px) px-to-rem(9px) px-to-rem(4px) rgba(156, 144, 156, .44);
+}
+
 $black: black;
 $dark: #414452;
+$dark-hovered: #545663;
 $green: green;
 $light-green: lightgreen;
 $yellow-green: yellowgreen;
@@ -41,3 +53,5 @@ $grey: gray;
 $light-grey: lightgrey;
 $white: white;
 $whitesmoke: whitesmoke;
+$medium-turquoise: mediumturquoise;
+$medium-turquoise-hovered: #40bcb7;

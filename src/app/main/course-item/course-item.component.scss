@@ -1,0 +1,83 @@
+@import '../../theme/core-variables.scss';
+
+.course-item {
+    @include basePaddings;
+    @include baseFont;
+    @include baseShadow;
+
+    display: flex;
+    flex-wrap: wrap;
+    margin: px-to-rem(10px) 0;
+    background-color: $white;
+    align-items: center;
+    border-radius: px-to-rem(3px);
+
+    .left-container {
+        flex: 10 1 px-to-rem(100px);
+        flex-direction: column;
+        min-width: 280px;
+        cursor: pointer;
+
+        .first-line {
+            @include basePaddings;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+
+            .title {
+                color: $dark;
+            }
+
+            .date-info {
+                display: flex;
+                padding: px-to-rem(5px) 0;
+                color: $light-grey;
+                font-size: px-to-rem(14px);
+
+                .creation-date {
+                    margin: 0 px-to-rem(5px);
+                }
+            }
+        }
+
+        .description {
+            @include basePaddings;
+
+            color: $grey;
+        }
+    }
+
+    .right-container {
+        flex: 1 1 px-to-rem(100px);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: center;
+        height: fit-content;
+
+        .edit,
+        .delete {
+            @include button;
+            @include paddingsMin;
+
+            display: flex;
+            height: px-to-rem(30px);
+            margin: px-to-rem(5px);
+            background-color: $medium-turquoise;
+            color: $white;
+            font-size: px-to-rem(12px);
+            line-height: px-to-rem(12px);
+
+            .fa-trash,
+            .fa-pen {
+                margin-right: px-to-rem(5px);
+            }
+
+            &:hover {
+                background-color: $medium-turquoise-hovered;
+            }
+        }
+    }
+}
