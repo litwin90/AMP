@@ -5,12 +5,13 @@
         "ng": "ng",
         "start": "ng serve -o",
         "build": "ng build",
-        "test": "ng test",
+        "test": "ng test --no-watch --no-progress --browsers=ChromeHeadlessCI --code-coverage",
         "lint": "ng lint && npm run stylelint",
-        "e2e": "ng e2e",
+        "e2e": " ng e2e --protractor-config=e2e/protractor-ci.conf.js --port",
         "compile": "tsc -p tsconfig.json --noEmit",
         "stylelint": "stylelint \"src/**/(*.scss)\"",
-        "style-fix": "stylelint \"src/**/*.scss\" --fix && stylelint \"src/**/*.html\" --fix"
+        "style-fix": "stylelint \"src/**/*.scss\" --fix && stylelint \"src/**/*.html\" --fix",
+        "test-cover": "ng test --no-watch --code-coverage"
     },
     "private": true,
     "dependencies": {
@@ -56,7 +57,7 @@
     "husky": {
         "hooks": {
             "commit-msg": "validate-commit-msg",
-            "pre-commit": "npm run lint && npm run compile"
+            "pre-commit": "npm run lint"
         }
     }
 }

@@ -26,6 +26,22 @@ module.exports = function (config) {
         logLevel: config.LOG_INFO,
         autoWatch: true,
         browsers: ['Chrome'],
-        singleRun: false
+        customLaunchers: {
+          ChromeHeadlessCI: {
+            base: 'ChromeHeadless',
+            flags: ['--no-sandbox']
+          }
+        },
+        singleRun: false,
+        coverageIstanbulReporter: {
+            reports: [ 'html', 'lcovonly' ],
+            fixWebpackSourcePaths: true,
+            thresholds: {
+              statements: 80,
+              lines: 80,
+              branches: 80,
+              functions: 80
+            }
+        }
     });
 };
