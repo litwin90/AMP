@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { ICourse, fakeCourse } from '../course-item/course-item.models';
 
 @Component({
@@ -6,16 +6,23 @@ import { ICourse, fakeCourse } from '../course-item/course-item.models';
     templateUrl: './courses-list.component.html',
     styleUrls: ['./courses-list.component.scss'],
 })
-export class CoursesListComponent implements OnInit {
+export class CoursesListComponent implements OnInit, OnDestroy {
+    @Input() initialListSize = 2;
+    @Input() loadRequestSize = 2;
+
+    listSize: number;
     courses: ICourse[];
 
     constructor() {}
 
     ngOnInit() {
         this.courses = [];
-        this.courses.length = 5;
-        this.courses.fill(fakeCourse, 0, 5);
+        this.courses.length = 7;
+        this.courses.fill(fakeCourse, 0, 7);
+        this.setListSize(this.initialListSize);
     }
+
+    ngOnDestroy() {}
 
     onEditCourse(id: string) {
         console.log(`Edited course id: ${id}`);
@@ -23,5 +30,14 @@ export class CoursesListComponent implements OnInit {
 
     onDeleteCourse(id: string) {
         console.log(`Deleted course id: ${id}`);
+    }
+
+    onLoadRequest() {
+        this.setListSize(this.listSize + this.loadRequestSize);
+    }
+
+    setListSize(size: number) {
+        this.listSize = size;
+        console.log(this.listSize);
     }
 }

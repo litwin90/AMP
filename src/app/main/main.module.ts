@@ -9,6 +9,7 @@ import { CourseItemComponent } from './course-item/course-item.component';
 import { CoursePageComponent } from './course-page/course-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { LoadMoreComponent } from './load-more/load-more.component';
 
 @NgModule({
     declarations: [
@@ -19,6 +20,7 @@ import { AppRoutingModule } from '../app-routing.module';
         CourseItemComponent,
         CoursePageComponent,
         NotFoundComponent,
+        LoadMoreComponent,
     ],
     imports: [CommonModule, AppCommonModule, AppRoutingModule],
     exports: [MainComponent],

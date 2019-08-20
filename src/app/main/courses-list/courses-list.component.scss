@@ -7,9 +7,7 @@
     .wrapper {
         @include container;
 
-        height: px-to-rem(50px);
-        justify-content: flex-start;
-        align-items: flex-start;
+        min-height: px-to-rem(50px);
         flex-direction: column;
 
         .add-course {
@@ -27,6 +25,10 @@
             .fa-plus {
                 margin-right: px-to-rem(10px);
             }
+        }
+
+        app-load-more {
+            width: 100%;
         }
     }
 }

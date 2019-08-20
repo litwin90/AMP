@@ -15,6 +15,12 @@ $base-font-size: 16px;
     padding: px-to-rem(8px) px-to-rem(16px);
 }
 
+@mixin href {
+    color: $blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 @mixin paddingsMin {
     padding: px-to-rem(5px) px-to-rem(12px);
 }
@@ -55,3 +61,4 @@ $white: white;
 $whitesmoke: whitesmoke;
 $medium-turquoise: mediumturquoise;
 $medium-turquoise-hovered: #40bcb7;
+$blue: blue;

@@ -1,0 +1,16 @@
+@import '../../theme/core-variables.scss';
+
+.load-more {
+    @include basePaddings;
+    @include baseFont;
+    @include baseShadow;
+    @include href;
+
+    display: flex;
+    flex-wrap: wrap;
+    margin: px-to-rem(10px) 0;
+    background-color: $white;
+    align-items: center;
+    justify-content: center;
+    border-radius: px-to-rem(3px);
+}
