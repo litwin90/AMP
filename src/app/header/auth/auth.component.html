@@ -1,14 +1,14 @@
 <div class="auth">
     <div *ngIf="isLoggedIn" class="user-login">
-        <i class="fas fa-user"></i>
+        <fa-icon [icon]="['fas', 'user']"></fa-icon>
         {{ userLogin }}
     </div>
     <button
         class="login-logoff"
         (click)="onAuthClick()"
     >
-        <i *ngIf="isLoggedIn" class="fas fa-sign-out-alt"></i>
-        <i *ngIf="!isLoggedIn" class="fas fa-sign-in-alt"></i>
+        <fa-icon *ngIf="isLoggedIn" [icon]="['fas', 'sign-out-alt']"></fa-icon>
+        <fa-icon *ngIf="!isLoggedIn" [icon]="['fas', 'sign-in-alt']"></fa-icon>
         {{ isLoggedIn ? 'Log off' : 'Log in'}}
     </button>
 </div>

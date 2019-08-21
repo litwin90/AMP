@@ -10,6 +10,7 @@ import { CoursePageComponent } from './course-page/course-page.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { LoadMoreComponent } from './load-more/load-more.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,7 @@ import { LoadMoreComponent } from './load-more/load-more.component';
         NotFoundComponent,
         LoadMoreComponent,
     ],
-    imports: [CommonModule, AppCommonModule, AppRoutingModule],
+    imports: [CommonModule, AppCommonModule, AppRoutingModule, FontAwesomeModule],
     exports: [MainComponent],
 })
 export class MainModule {}

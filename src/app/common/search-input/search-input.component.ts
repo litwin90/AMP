@@ -7,6 +7,7 @@ import { KeyCodes } from '../../data/constants';
     styleUrls: ['./search-input.component.scss'],
 })
 export class SearchInputComponent implements OnInit, AfterViewInit {
+    isInputFocused: boolean;
     constructor(private renderer: Renderer2) {}
     @ViewChild('inputField') input: ElementRef;
     @ViewChild('icon') icon: ElementRef;
@@ -54,11 +55,13 @@ export class SearchInputComponent implements OnInit, AfterViewInit {
 
     private markInputAsFocused() {
         this.renderer.addClass(this.input.nativeElement, 'focused');
-        this.renderer.addClass(this.icon.nativeElement, 'focused');
+        // this.renderer.addClass(this.icon.nativeElement, 'focused');
+        this.isInputFocused = true;
     }
 
     private markInputUsBlurred() {
         this.renderer.removeClass(this.input.nativeElement, 'focused');
-        this.renderer.removeClass(this.icon.nativeElement, 'focused');
+        // this.renderer.removeClass(this.icon.nativeElement, 'focused');
+        this.isInputFocused = false;
     }
 }

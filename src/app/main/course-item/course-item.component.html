@@ -4,11 +4,11 @@
             <a routerLink="../notFound"><h3 class="title">{{ course.title }}</h3></a>
             <div class="date-info">
                 <div class="duration">
-                    <i class="far fa-clock"></i>
+                    <fa-icon [icon]="['far', 'clock']"></fa-icon>
                     {{ course.duration | minuteToHours }}
                 </div>
                 <div class="creation-date">
-                    <i class="far fa-calendar-alt"></i>
+                    <fa-icon [icon]="['far', 'calendar-alt']"></fa-icon>
                     {{ course.creationDate | date:'d LLL, yyyy' }}
                 </div>
             </div>
@@ -20,14 +20,14 @@
             class="edit"
             (click)="onEdit(course.id)"
         >
-            <i class="fas fa-pen"></i>
+            <fa-icon [icon]="['fas', 'pen']" class="fa-pen"></fa-icon>
             Edit
         </button>
         <button
             class="delete"
             (click)="onDelete(course.id)"
         >
-            <i class="fas fa-trash"></i>
+            <fa-icon [icon]="['fas', 'trash']" class="fa-trash"></fa-icon>
             Delete
         </button>
     </div>

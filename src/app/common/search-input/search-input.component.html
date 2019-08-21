@@ -1,6 +1,6 @@
 
 <div class="input-with-icon">
-    <i class="fa fa-search" aria-hidden="true" #icon></i>
+    <fa-icon [icon]="['fas', 'search']" #icon [ngClass]="isInputFocused ? 'focused' : ''"></fa-icon>
     <input
         class="input"
         type="text"
