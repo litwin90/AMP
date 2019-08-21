@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CourseControlsComponent } from './course-controls.component';
+import { AppCommonModule } from '../../common/common.module';
 
 describe('CourceControlsComponent', () => {
     let component: CourseControlsComponent;
@@ -8,6 +9,7 @@ describe('CourceControlsComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
+            imports: [AppCommonModule],
             declarations: [CourseControlsComponent],
         }).compileComponents();
     }));

@@ -1,6 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MainComponent } from './main.component';
+import { BreadCrumbsComponent } from '../bread-crumbs/bread-crumbs.component';
+import { CourseControlsComponent } from '../course-controls/course-controls.component';
+import { CoursesListComponent } from '../courses-list/courses-list.component';
+import { AppCommonModule } from '../../common/common.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CourseItemComponent } from '../course-item/course-item.component';
+import { LoadMoreComponent } from '../load-more/load-more.component';
 
 describe('MainComponent', () => {
     let component: MainComponent;
@@ -8,7 +15,15 @@ describe('MainComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            declarations: [MainComponent],
+            imports: [AppCommonModule, FontAwesomeModule],
+            declarations: [
+                MainComponent,
+                BreadCrumbsComponent,
+                CourseControlsComponent,
+                CoursesListComponent,
+                CourseItemComponent,
+                LoadMoreComponent,
+            ],
         }).compileComponents();
     }));
 
