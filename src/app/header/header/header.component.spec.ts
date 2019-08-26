@@ -4,6 +4,7 @@ import { HeaderComponent } from './header.component';
 import { AppCommonModule } from '../../common/common.module';
 import { AuthComponent } from '../auth/auth.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { IconsModule } from '../../icons/icons.module';
 
 describe('HeaderComponent', () => {
     let component: HeaderComponent;
@@ -11,7 +12,7 @@ describe('HeaderComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            imports: [AppCommonModule, FontAwesomeModule],
+            imports: [AppCommonModule, FontAwesomeModule, IconsModule],
             declarations: [HeaderComponent, AuthComponent],
         }).compileComponents();
     }));

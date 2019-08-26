@@ -4,6 +4,7 @@ import { CourseItemComponent } from './course-item.component';
 import { AppCommonModule } from '../../common/common.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ICourse, fakeCourse } from './course-item.models';
+import { IconsModule } from '../../icons/icons.module';
 
 describe('CourseItemComponent', () => {
     let component: CourseItemComponent;
@@ -11,7 +12,7 @@ describe('CourseItemComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            imports: [AppCommonModule, FontAwesomeModule],
+            imports: [AppCommonModule, FontAwesomeModule, IconsModule],
             declarations: [CourseItemComponent],
         }).compileComponents();
     }));

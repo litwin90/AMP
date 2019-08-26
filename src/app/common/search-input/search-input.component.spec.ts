@@ -2,6 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { SearchInputComponent } from './search-input.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { IconsModule } from '../../icons/icons.module';
 
 describe('SearchInputComponent', () => {
     let component: SearchInputComponent;
@@ -9,7 +10,7 @@ describe('SearchInputComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            imports: [FontAwesomeModule],
+            imports: [FontAwesomeModule, IconsModule],
             declarations: [SearchInputComponent],
         }).compileComponents();
     }));
