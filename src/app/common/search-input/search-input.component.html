@@ -1,12 +1,15 @@
 
 <div class="input-with-icon">
-    <fa-icon [icon]="['fas', 'search']" #icon [ngClass]="isInputFocused ? 'focused' : ''"></fa-icon>
-    <input
-        class="input"
-        type="text"
-        autofocus
-        (focus)="onFocus()"
-        (blur)="onBlur()"
-        #inputField
-    >
+    <div class="input-box">
+        <fa-icon [icon]="['fas', 'search']" *ngIf="!isInputFocused"></fa-icon>
+        <input
+            class="input"
+            type="text"
+            autofocus
+            (focus)="onFocus()"
+            (blur)="onBlur()"
+            #inputField
+        >
+    </div>
+    <button class="search">Search</button>
 </div>

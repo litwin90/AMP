@@ -1,4 +1,4 @@
-import { Component, OnInit, ElementRef, Renderer2, ViewChild, AfterViewInit, HostListener } from '@angular/core';
+import { Component, ElementRef, Renderer2, ViewChild, AfterViewInit, HostListener } from '@angular/core';
 import { KeyCodes } from '../../data/constants';
 
 @Component({
@@ -6,11 +6,10 @@ import { KeyCodes } from '../../data/constants';
     templateUrl: './search-input.component.html',
     styleUrls: ['./search-input.component.scss'],
 })
-export class SearchInputComponent implements OnInit, AfterViewInit {
+export class SearchInputComponent implements AfterViewInit {
     isInputFocused: boolean;
     constructor(private renderer: Renderer2) {}
     @ViewChild('inputField') input: ElementRef;
-    @ViewChild('icon') icon: ElementRef;
 
     @HostListener('keydown', ['$event'])
     onKeyDown(keyboardEvent: KeyboardEvent) {
@@ -25,7 +24,6 @@ export class SearchInputComponent implements OnInit, AfterViewInit {
                 break;
         }
     }
-    ngOnInit() {}
 
     ngAfterViewInit() {
         this.renderer.setProperty(this.input.nativeElement, 'value', 'Text to search');
@@ -54,14 +52,10 @@ export class SearchInputComponent implements OnInit, AfterViewInit {
     }
 
     private markInputAsFocused() {
-        this.renderer.addClass(this.input.nativeElement, 'focused');
-        // this.renderer.addClass(this.icon.nativeElement, 'focused');
         this.isInputFocused = true;
     }
 
     private markInputUsBlurred() {
-        this.renderer.removeClass(this.input.nativeElement, 'focused');
-        // this.renderer.removeClass(this.icon.nativeElement, 'focused');
         this.isInputFocused = false;
     }
 }

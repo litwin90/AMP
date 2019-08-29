@@ -1,20 +1,16 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
     selector: 'app-auth',
     templateUrl: './auth.component.html',
     styleUrls: ['./auth.component.scss'],
 })
-export class AuthComponent implements OnInit {
+export class AuthComponent {
     @Input() isLoggedIn: boolean;
-    @Input() userLogin: boolean;
+    @Input() userLogin: string;
 
     @Output() login = new EventEmitter();
     @Output() logout = new EventEmitter();
-
-    constructor() {}
-
-    ngOnInit() {}
 
     onAuthClick() {
         if (this.isLoggedIn) {

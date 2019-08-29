@@ -11,25 +11,9 @@
         justify-content: flex-start;
         align-items: center;
         flex-wrap: wrap;
+    }
 
-        .search {
-            @include button;
-
-            flex: 1 2 100px;
-            max-width: 100px;
-            margin: px-to-rem(10px) 0;
-            border-radius: px-to-rem(3px);
-            background-color: $yellow-green;
-            color: $white;
-
-            &:hover {
-                background-color: $yellow-green-hover;
-            }
-        }
-
-        app-search-input {
-            flex: 1 2 250px;
-            max-width: 350px;
-        }
+    app-search-input {
+        flex-basis: 100%;
     }
 }

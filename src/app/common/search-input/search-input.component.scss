@@ -1,33 +1,54 @@
 @import '../../theme/core-variables.scss';
 
 .input-with-icon {
-    position: relative;
-}
+    display: flex;
+    align-items: center;
 
-.input {
-    @include basePaddings;
+    .input-box {
+        display: flex;
+        align-items: center;
+        flex-basis: px-to-rem(300px);
 
-    height: px-to-rem(30px);
-    width: 100%;
-    border: px-to-rem(1px) solid $light-grey;
-    border-radius: px-to-rem(3px);
-    padding-left: px-to-rem(28px);
-    outline: none;
-    color: $light-grey;
+        fa-icon {
+            z-index: 1;
+            padding-left: px-to-rem(6px);
+            color: $light-grey;
 
-    &.focused {
-        padding-left: px-to-rem(16px);
-        color: $grey;
+            &.focused {
+                display: none;
+            }
+        }
+
+        .input {
+            @include basePaddings;
+
+            flex-basis: 100%;
+            width: 0;
+            margin-left: px-to-rem(-22px);
+            padding-left: px-to-rem(25px);
+            border: px-to-rem(1px) solid $light-grey;
+            border-radius: px-to-rem(3px);
+            color: $light-grey;
+            outline: none;
+
+            &:focus {
+                margin-left: 0;
+                padding-left: px-to-rem(10px);
+                outline-offset: 0;
+                color: $grey;
+            }
+        }
     }
-}
 
-fa-icon {
-    position: absolute;
-    top: px-to-rem(7px);
-    left: px-to-rem(8px);
-    color: $light-grey;
+    .search {
+        @include button;
 
-    &.focused {
-        display: none;
+        margin: px-to-rem(8px) 0 px-to-rem(8px) px-to-rem(12px);
+        background-color: $yellow-green;
+        color: $white;
+
+        &:hover {
+            background-color: $yellow-green-hover;
+        }
     }
 }

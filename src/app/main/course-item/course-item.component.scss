@@ -11,6 +11,7 @@
     background-color: $white;
     align-items: center;
     border-radius: px-to-rem(3px);
+    overflow: hidden;
 
     .left-container {
         flex: 10 1 px-to-rem(100px);

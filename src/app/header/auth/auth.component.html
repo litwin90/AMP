@@ -7,8 +7,8 @@
         class="login-logoff"
         (click)="onAuthClick()"
     >
-        <fa-icon *ngIf="isLoggedIn" [icon]="['fas', 'sign-out-alt']"></fa-icon>
-        <fa-icon *ngIf="!isLoggedIn" [icon]="['fas', 'sign-in-alt']"></fa-icon>
+        <fa-icon *ngIf="isLoggedIn" [icon]="['fas', 'sign-out-alt']" class="sign-out"></fa-icon>
+        <fa-icon *ngIf="!isLoggedIn" [icon]="['fas', 'sign-in-alt']" class="sign-in"></fa-icon>
         {{ isLoggedIn ? 'Log off' : 'Log in'}}
     </button>
 </div>

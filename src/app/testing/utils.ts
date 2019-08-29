@@ -14,3 +14,19 @@ export function click(el: DebugElement | HTMLElement, eventObj: any = ButtonClic
         el.triggerEventHandler('click', eventObj);
     }
 }
+
+export function focus(el: DebugElement | HTMLElement): void {
+    if (el instanceof HTMLElement) {
+        el.focus();
+    } else {
+        el.triggerEventHandler('focus', null);
+    }
+}
+
+export function blur(el: DebugElement | HTMLElement): void {
+    if (el instanceof HTMLElement) {
+        el.blur();
+    } else {
+        el.triggerEventHandler('blur', null);
+    }
+}
